@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Equalizer-Tesco</title>
+</head>
+
+<body ng-app="equalizer">
+    <div class="equalizer-container" ng-controller="MainCtrl">
+        <div class="equalizer-wrapper">
+            <div class="equalizer-label">
+                <p>+12 db</p>
+                <p>0</p>
+                <p>-12 db</p>
+            </div>
+            <eq-slider-bar hertz="60" value="sliderOneVal"></eq-slider-bar>
+            <eq-slider-bar hertz="310" value="sliderTwoVal"></eq-slider-bar>
+            <eq-slider-bar hertz="1K" value="sliderThreeVal"></eq-slider-bar>
+            <eq-slider-bar hertz="6K" value="sliderFourVal"></eq-slider-bar>
+            <eq-slider-bar hertz="16K" value="sliderFiveVal"></eq-slider-bar>
+        </div>
+
+        <div class="button-wrapper">
+            <select ng-model="musicType" ng-change="updateEqualizer()">
+                <option value="">Preset</option>
+                <option value="rock">Rock</option>
+                <option value="pop">Pop</option>
+                <option value="jazz">Jazz</option>
+                <option value="classical">Classical</option>
+            </select>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="scripts/app.js">
+    </script>
+</body>
+
+</html>
